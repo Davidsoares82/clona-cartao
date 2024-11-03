@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>População da cidade</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(98, 98, 236);
+            color: white;
+            margin: 0;
+            text-align: center;
+            font-family: sans-serif;
+        
+        }
+       
+        h1 {
+            text-decoration: underline;
+            font-size: 2.5em;
+        }
+
+
+        .button {
+            background-color: rgb(255, 255, 255);
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: rgb(220, 220, 220);
+        }
+
+
+        .caixa {
+            border-radius: 7px;
+            padding: 10px;
+            margin: 10px 0;
+            width: 35%;
+            max-width: 250px;
+            font-size: 16px;
+        }
+
+
+        p {
+
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        .whatsapp {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            z-index: 9999;
+            background: rgb(20, 200, 91);
+            color: rgb(255, 255, 255);
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: 0.2s, background-color 0.2s;
+
+        }
+
+        .whatsapp:hover {
+            background-color: rgb(40, 204, 81);
+        }
+
+        .whatsapp:active{
+            transform: scale(0.85);
+        }
+        .slider {
+            margin: 0 auto;
+            width: 800px;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .slides {
+            width: 400%;
+            height: 400px;
+            display: flex;
+            transition: margin-left 0.5s ease;
+
+        }
+        .slides input {
+            display: none;
+        }
+
+        .slide{
+            width: 25%;
+            position: relative;
+            transition: 2s;
+        }
+
+        .slide img{
+            width: 95%;
+            height: 400px;
+
+        }
+
+
+        .manual-navegacao{
+            position: absolute;
+            width: 800px;
+            margin-top: -40px;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .manual-btn{
+            border: 2px solid  #fff;
+            padding: 5px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.5s;
+            margin-right: 20px;
+            
+
+        }
+
+        .manual-btn:not(:last-child) {
+            margin-right: 40px;
+            
+        }
+
+        .manual-btn:hover {
+            background-color: #fff;
+
+        }
+
+        #radio1:checked ~ .first {
+            margin-left: 0;
+           
+
+        }
+
+        #radio2:checked ~ .first {
+            margin-left: -25%;
+           
+
+        }
+        #radio3:checked ~ .first {
+            margin-left: -50%;
+           
+
+        }
+
+        
+        .navegacao-auto div {
+            border: 2px solid rgb(0, 0, 0);
+            padding: 5px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.5s;
+            margin-right: 20px;
+        }
+        
+        .navegacao-auto {
+            position: absolute;
+            width: 800px;
+           margin-top: 360px;
+           display: flex;
+           justify-content: center; 
+        }
+
+        .navegacao-auto div:not(:Last-child) {
+            margin-right: 40px;
+        }
+        
+        #radio1:checked ~ .navegacao-auto .auto-btn1 {
+            background-color: #fff;
+        }
+
+
+        #radio1:checked ~ .navegacao-auto .auto-btn2 {
+            background-color: #fff;
+        }
+
+
+        #radio1:checked ~ .navegacao-auto .auto-btn3 {
+            background-color: #fff;
+        }
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <a class="whatsapp" href="https://api.whatsapp.com/send?phone= 7598882863" target="_blank">
+        <i class="fa  fa-whatsapp"></i> Fale com minha sócia
+    </a>
+
+
+    <h1>Sua cidade é grande?</h1>
+
+    <p>As cidades ao redor do mundo apresentam uma diversidade impressionante em suas populações. Metropóles como
+        Tóquio, com mais de 37 milhões de habitantes, contrastam com cidades menores, que podem ter apenas algumas
+        milhares de pessoas. O crescimento urbano contínuo leva ao aumento da densidade populacional, resultando em
+        desafios como habitação, transporte e infraestrutura. Essa dinâmica demográfica reflete as tendências sociais,
+        econômicas e culturais, moldando a vida cotidiana dos habitantes.</p>
+
+
+    <div class="slider">
+
+         <div class="slides">
+            <!--Radio Button/Bolinha-->
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <!--Fim do Radio Button-->
+
+
+            <!--Slider imagem-->
+            <div class="slide first">
+                <img src="https://img.freepik.com/fotos-gratis/foto-aerea-do-horizonte-da-cidade-sob-um-ceu-laranja-ao-por-do-sol_181624-19234.jpg" alt="imagem1">
+            </div>
+            <div class="slide ">
+                <img src="https://t4.ftcdn.net/jpg/02/62/82/33/360_F_262823323_xtX8ePInUtVjVefhZcMWJ9c5RGoGh74U.jpg" alt="imagem2">
+            </div>
+            <div class="slide ">
+                <img src="https://c0.wallpaperflare.com/preview/367/194/462/salvador-bahia-brazil-tourism.jpg" alt="imagem3">
+            </div>
+            <!--Fim Slider imagem-->
+
+       <!--Navigação auto-->
+       <div class="navegacao-auto">
+        <div class="auto-btn1"></div>
+        <div class="auto-btn2"></div>
+        <div class="auto-btn3"></div>
+    </div>
+
+</div>
+
+<div class="manual-navegacao">
+    <label for="radio1" class="manual-btn"></label>
+    <label for="radio2" class="manual-btn"></label>
+    <label for="radio3" class="manual-btn"></label>
+</div>
+
+
+</div>
+
+
+
+
+
+    <h3>Veja se sua cidade é grande</h3>
+    <h4>Digite o nome da sua cidade 👇.</h4>
+
+
+    <input type="cidade" id="txt" placeholder="Digite sua cidade" autofocus class="caixa">
+    <input type="button" value="Enviar" onclick="Verification()" class="button">
+    <p id="MensagemCidade"></p>
+
+    <h4>Quantos habitantes na sua cidade?</h4>
+    <input type="populacao" id="quantidade" placeholder="Quantos habitantes" autofocus class="caixa">
+    <input type="button" value="Enviar" onclick="quantDePovo()" class="button">
+    <p id="MensagemPopulacao"></p>
+
+    <script>
+
+        const cidadesPorEstado = {
+            "Acre": ["Acrelândia", "Assis Brasil", "Brasiléia", "Bujari", "Capixaba", "Cruzeiro do Sul"],
+            "Alagoas": ["Maceió", "Arapiraca", "Palmeira dos Índios", "Penedo", "Rio Largo"],
+            "Amapá": ["Macapá", "Santana", "Laranjal do Jari", "Oiapoque", "Mazagão"],
+            "Amazonas": ["Manaus", "Parintins", "Itacoatiara", "Tabatinga", "Tefé"],
+            "Bahia": ["Salvador", "Feira de Santana", "Vitória da Conquista", "Camaçari", "Ilhéus", "Cruz das Almas"],
+            "Ceará": ["Fortaleza", "Caucaia", "Juazeiro do Norte", "Sobral", "Maracanaú"],
+            "Distrito Federal": ["Brasília"],
+            "Espírito Santo": ["Vitória", "Vila Velha", "Serra", "Cariacica", "Guarapari"],
+            "Goiás": ["Goiânia", "Aparecida de Goiânia", "Anápolis", "Rio Verde", "Trindade"],
+            "Maranhão": ["São Luís", "Imperatriz", "Caxias", "Açailândia", "Timon"],
+            "Mato Grosso": ["Cuiabá", "Várzea Grande", "Rondonópolis", "Sinop", "Tangará da Serra"],
+            "Mato Grosso do Sul": ["Campo Grande", "Dourados", "Três Lagoas", "Corumbá", "Ponta Porã"],
+            "Minas Gerais": ["Belo Horizonte", "Uberlândia", "Contagem", "Juiz de Fora", "Betim"],
+            "Pará": ["Belém", "Ananindeua", "Santarém", "Marabá", "Altamira"],
+            "Paraíba": ["João Pessoa", "Campina Grande", "Patos", "Santa Rita", "Cabedelo"],
+            "Paraná": ["Curitiba", "Londrina", "Maringá", "Ponta Grossa", "Foz do Iguaçu"],
+            "Pernambuco": ["Recife", "Olinda", "Jaboatão dos Guararapes", "Caruaru", "Petrolina"],
+            "Piauí": ["Teresina", "Parnaíba", "Picos", "Floriano", "Oeiras"],
+            "Rio de Janeiro": ["Rio de Janeiro", "Niterói", "Duque de Caxias", "Nova Iguaçu", "São Gonçalo"],
+            "Rio Grande do Norte": ["Natal", "Mossoró", "Parnamirim", "Caicó", "Currais Novos"],
+            "Rio Grande do Sul": ["Porto Alegre", "Caxias do Sul", "Pelotas", "Santa Maria", "Gravataí"],
+            "Rondônia": ["Porto Velho", "Ji-Paraná", "Ariquemes", "Rolim de Moura", "Cacoal"],
+            "Roraima": ["Boa Vista", "Rorainópolis", "Caracaraí", "Pacaraima", "Iracema"],
+            "Santa Catarina": ["Florianópolis", "Joinville", "Blumenau", "Chapecó", "Criciúma"],
+            "São Paulo": ["São Paulo", "Campinas", "Guarulhos", "São Bernardo do Campo", "Santo André"],
+            "Sergipe": ["Aracaju", "Nossa Senhora do Socorro", "Lagarto", "Itabaiana", "Estância"],
+            "Tocantins": ["Palmas", "Araguaína", "Gurupi", "Paraíso do Tocantins", "Porto Nacional"]
+        };
+
+
+        function formatarTexto(texto) {
+            return texto.split(' ').map(palavra => {
+                return palavra.charAt(0).toUpperCase() + palavra.slice(1).toLowerCase();
+            }).join(' ');
+
+
+        }
+
+
+        // Função para verificar a Cidade e o Esdado
+        function Verification() {
+            const nomeCidade = formatarTexto(document.getElementById('txt').value)
+            let estadoEncontrado = null
+
+            //Converte o nome da cidade para minúsculas
+            const cidadeLower = nomeCidade.toLowerCase()
+
+            //Percorre cada estado e suas cidades
+            for (const estado in cidadesPorEstado) {
+                if (cidadesPorEstado[estado].some(cidade => cidade.toLowerCase() === cidadeLower)) {
+                    estadoEncontrado = estado
+                    break
+                }
+            }
+
+            const resultando = document.getElementById('MensagemCidade')
+
+            if (estadoEncontrado) {
+                resultando.innerHTML = `Você é do(a) <b>${estadoEncontrado}</b> e sua cidade é <b>${nomeCidade}</b>`
+
+            } else {
+                resultando.innerHTML = `Cidade não reconhecida. Por favor, insira uma cidade válida do Brasil `
+            }
+
+        }
+
+        function quantDePovo() {
+            const Povo = document.getElementById('quantidade').value
+
+            //Remove pontos e vírgulas da string e converte para número
+            const PovoNumerico = parseFloat(Povo.replace(/\./g, '').replace(/,/g, '.'))
+
+            const resultando = document.getElementById('MensagemPopulacao')
+
+            if (PovoNumerico >= 10000000) {
+                resultando.innerHTML = `A População da Cidade é de <b>${Povo}</b> habitantes, o que classifica como uma grande metrópole.`
+
+            } else {
+                resultando.innerHTML = `A População da Cidade é de <b>${Povo}</b> habitantes, caracterizando-a como uma pequena localidade.`
+            }
+        }
+
+        let count = 1
+        document.getElementById('radio1').checked = true
+
+
+        setInterval(function(){
+            nexImage()
+        }, 3000)
+
+
+        function nexImage(){
+            count++
+            if(count > 3 ){
+                count = 1
+             }
+
+             document.getElementById('radio'+ count).checked = true
+        }
+
+    </script>
+</body>
+
+</html>
